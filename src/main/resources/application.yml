@@ -1,0 +1,19 @@
+server:
+  port: 9500
+  ssl:
+    enabled: true
+
+    key-store-type: PKCS12
+    key-store: classpath:ssl/keystore.p12
+    key-store-password: 1234567890
+
+    trust-store: classpath:ssl/truststore.jks
+    trust-store-password: k1234567890
+    trust-store-type: JKS
+
+    client-auth: need
+
+mtls-config:
+  enabled: true
+  http_port: 9501
+  whitelist: app1, app2
